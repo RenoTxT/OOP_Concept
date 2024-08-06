@@ -26,6 +26,7 @@ namespace calculator
         private bool toB = false;
         private bool clickedOperation = false;
         private bool isResult = false;
+        private bool multiplication = false;
 
 
         public calculator()
@@ -43,8 +44,6 @@ namespace calculator
             //this program is used for change the number at the text box by using flex, we can add more leght and separate the "a" variable and "b" variable
             Button button = (Button)sender;
             string number = button.Text;
-            if (isResult)
-            {
                 if (textBox1.Text == "0")
                 {
                     // Replace "0" with the clicked number for "a" variable
@@ -53,7 +52,7 @@ namespace calculator
                 else
                 {
                     //when it's "b" variable it stuck at the last number and change to then number which you clicked
-                    if (clickedOperation == true)
+                    if (clickedOperation == true || multiplication == true && toB == true)
                     {
                         textBox1.Text = number;
                         clickedOperation = false;
@@ -63,8 +62,6 @@ namespace calculator
                         // Append the clicked number to the existing text
                         textBox1.Text += number;
                     }
-                }
-                isResult = false;
             }
         }
 
@@ -95,6 +92,8 @@ namespace calculator
             a = b = c = 0;
             toB = false;
             clickedOperation = false;
+            isResult = false;
+            multiplication = false;
             operation = "";
             angka_history.Text = "0";
         }
@@ -146,21 +145,25 @@ namespace calculator
                 case "plus":
                     c = a + b;
                     angka_history.Text = a + " + " + b;
+                    multiplication = true;
                     break;
                 case "minus":
                     c = a - b;
                     angka_history.Text = a + " - " + b;
+                    multiplication = true;
                     break;
                 case "multiply":
                     c = a * b;
                     angka_history.Text = a + " × " + b;
+                    multiplication = true;
                     break;
                 case "divide":
-                    if (b != 0)
+                    if (textBox1.TabStop                                                                                                                                                                                                                                                                                            )
                     {
                         // Perform division
                         c = a / b;
                         angka_history.Text = a + " ÷ " + b;
+                        multiplication = true;
                     }
                     else
                     {
@@ -175,50 +178,118 @@ namespace calculator
                         clickedOperation = false;
                     }
                     break;
+                default:
+                    c = double.Parse(textBox1.Text);
+                    angka_history.Text = c.ToString();
+                    break;
             }
             textBox1.Text = c.ToString();
             toB = false;
             a = c;
             c = 0;
-            isResult = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            angka_history.Text = textBox1.Text + " ÷ ";
-            operation = "divide";
-            toB = true;
-            clickedOperation = true;
+            if (toB)
+            {
+                b = 
+                c = a / b;
+                angka_history.Text = a + " ÷ " + b;
+                textBox1.Text = c.ToString();
+                a = c;
+                c = 0;
+                multiplication = true;
+            }
+            else
+            {
+                a = double.Parse(textBox1.Text);
+                angka_history.Text = textBox1.Text + " ÷ ";
+                operation = "divide";
+                toB = true;
+                clickedOperation = true;
+            }
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            angka_history.Text = textBox1.Text + " × ";
-            operation = "multiply";
-            toB = true;
-            clickedOperation = true;
+            if (toB)
+            {
+                b = double.Parse(textBox1.Text);
+                c = a * b;
+                angka_history.Text = a + " × " + b;
+                textBox1.Text = c.ToString();
+                a = c;
+                c = 0;
+                multiplication = true;
+            }
+            else
+            {
+                a = double.Parse(textBox1.Text);
+                angka_history.Text = textBox1.Text + " × ";
+                operation = "multiply";
+                toB = true;
+                clickedOperation = true;
+            }
         }
 
         private void plus_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            angka_history.Text = textBox1.Text + " + ";
-            operation = "plus";
-            toB = true;
-            clickedOperation = true;
+            if (toB)
+            {
+                b = double.Parse(textBox1.Text);
+                c = a + b;
+                angka_history.Text = a + " + " + b;
+                textBox1.Text = c.ToString();
+                a = c;
+                c = 0;
+                multiplication = true;
+            }
+            else
+            {
+                a = double.Parse(textBox1.Text);
+                angka_history.Text = textBox1.Text + " + ";
+                operation = "plus";
+                toB = true;
+                clickedOperation = true;
+            }
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-            a = double.Parse(textBox1.Text);
-            angka_history.Text = textBox1.Text + " - ";
-            operation = "minus";
-            toB = true;
-            clickedOperation = true;
+            if (toB)
+            {
+               
+                b = double.Parse(textBox1.Text);
+                c = a - b;
+                angka_history.Text = a + " - " + b;
+                textBox1.Text = c.ToString();
+                a = c;
+                c = 0;
+                multiplication = true;
+            }
+            else
+            {
+                a = double.Parse(textBox1.Text);
+                angka_history.Text = textBox1.Text + " - ";
+                operation = "minus";
+                toB = true;
+                clickedOperation = true;
+
+            }
         }
 
+        private void negate_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(textBox1.Text, out double currentValue))
+            {
+                // Negate the value
+                currentValue = -currentValue;
+
+                // Update textBox1 with the negated value
+                textBox1.Text = currentValue.ToString();
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -232,5 +303,4 @@ namespace calculator
 
 
 //problems:
-//1. Can't perform looping operation
-//2. The divide by 0 still not showing
+//1. The divide by 0 still not showing
