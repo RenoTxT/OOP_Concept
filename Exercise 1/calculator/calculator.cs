@@ -28,6 +28,10 @@ namespace calculator
         private bool isResult = false;
         private bool multiplication = false;
         private bool summingnonumber = false;
+        private bool pluss=false;
+        private bool minuss=false;
+        private bool multiplyy=false;
+        private bool dividee=false;
 
 
         public calculator()
@@ -64,11 +68,20 @@ namespace calculator
                     {
                         textBox1.Text = number;
                         clickedOperation = false;
+                        isResult = false;
                     }
                     else
                     {
-                        // Append the clicked number to the existing text
-                        textBox1.Text += number;
+                        if (isResult)
+                        {
+                            textBox1.Text = number;
+                            isResult = false;
+                        }
+                        else
+                        {
+                            // Append the clicked number to the existing text
+                            textBox1.Text += number;
+                        }
                     }
                 }
             }
@@ -196,6 +209,7 @@ namespace calculator
             }
             textBox1.Text = c.ToString();
             toB = false;
+            isResult = true;
             a = c;
             c = 0;
         }

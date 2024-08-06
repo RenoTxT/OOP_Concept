@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\GitHub\\OOP_Concept\\Exercise 1\\calculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D724745-14DF-40CE-846F-5C0C4391035B}|calculator.csproj|D:\\GitHub\\OOP_Concept\\Exercise 1\\calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D724745-14DF-40CE-846F-5C0C4391035B}|calculator.csproj|d:\\github\\oop_concept\\exercise 1\\calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D724745-14DF-40CE-846F-5C0C4391035B}|calculator.csproj|solutionrelative:calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{4D724745-14DF-40CE-846F-5C0C4391035B}|calculator.csproj|solutionrelative:calculator.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D724745-14DF-40CE-846F-5C0C4391035B}|calculator.csproj|d:\\github\\oop_concept\\exercise 1\\calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4D724745-14DF-40CE-846F-5C0C4391035B}|calculator.csproj|D:\\GitHub\\OOP_Concept\\Exercise 1\\calculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4D724745-14DF-40CE-846F-5C0C4391035B}|calculator.csproj|solutionrelative:calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -34,8 +34,7 @@
               "RelativeToolTip": "calculator.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T02:32:34.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-06T02:32:34.42Z"
             },
             {
               "$type": "Document",
@@ -45,7 +44,7 @@
               "RelativeDocumentMoniker": "calculator.cs",
               "ToolTip": "D:\\GitHub\\OOP_Concept\\Exercise 1\\calculator\\calculator.cs",
               "RelativeToolTip": "calculator.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAcwCIAAAAhAAAA",
+              "ViewState": "AQIAANIAAAAAAAAAAAAAAOIAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-06T02:31:38.061Z",
               "EditorCaption": ""
@@ -59,8 +58,7 @@
               "ToolTip": "D:\\GitHub\\OOP_Concept\\Exercise 1\\calculator\\calculator.cs [Design]",
               "RelativeToolTip": "calculator.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T02:31:30.207Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-08-06T02:31:30.207Z"
             }
           ]
         }
